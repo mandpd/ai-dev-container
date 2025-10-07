@@ -3,11 +3,15 @@
   // If your Coder image uses a specific user, keep it aligned:
   // "remoteUser": "coder",
 
-  "postCreateCommand": "bash .devcontainer/scripts/postCreate.sh",
+  "postCreateCommand": [
+    "/bin/bash",
+    "-lc",
+    ".devcontainer/scripts/postCreate.sh"
+  ],
 
   "postStartCommand": [
-    "bash -lc 'echo \"Python:   cd python && . .venv/bin/activate && python test.py\"'",
-    "bash -lc 'echo \"Jupyter:  cd jupyter && . .venv/bin/activate && jupyter lab --ip=0.0.0.0 --no-browser\"'",
-    "bash -lc 'echo \"TS/Node:  cd typescript && npm run start\"'"
+    "/bin/bash",
+    "-lc",
+    "echo 'Python:   cd python && . .venv/bin/activate && python test.py' &&echo 'Jupyter:  cd jupyter && . .venv/bin/activate && jupyter lab --ip=0.0.0.0 --no-browser' &&echo 'TS/Node:  cd typescript && npm run start'"
   ]
 }
