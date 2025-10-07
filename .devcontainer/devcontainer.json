@@ -5,11 +5,5 @@
     "/bin/bash",
     "-lc",
     ".devcontainer/scripts/postCreate.sh"
-  ],
-
-  "postStartCommand": [
-    "/bin/bash",
-    "-lc",
-    "echo 'Python:   cd python && . .venv/bin/activate && python test.py' && echo 'Jupyter:  cd jupyter && . .venv/bin/activate && jupyter lab --ip=0.0.0.0 --no-browser' && echo 'TS/Node:  cd typescript && npm run start'"
   ]
 }
